@@ -11,6 +11,10 @@ docker run --name internship_lerkasan --rm -p 80:80 internship_lerkasan:latest
 #sleep 5
 #docker exec internship_lerkasan /app/scripts/calculate_password.sh
 
+# Uncomment this to check scripts showing public IP
+#docker exec internship_lerkasan /app/scripts/get_public_ip.sh
+#docker exec internship_lerkasan python /app/scripts/get_public_ip.py
+
 # Uncomment this to clean up if needed
 #docker stop internship_lerkasan
 #docker rm internship_lerkasan

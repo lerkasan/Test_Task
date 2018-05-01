@@ -7,7 +7,10 @@ EXPOSE 80
 RUN apt-get update -y && \
     apt-get upgrade -y
 
-RUN apt-get install -y logrotate
+# Install packages necessary for additional tasks
+RUN apt-get install -y logrotate \
+                       dnsutils && \
+    pip install dnspython
 
 # Create folder for uwsgi logs
 RUN mkdir /var/log/uwsgi
