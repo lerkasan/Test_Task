@@ -15,3 +15,6 @@ RUN mkdir /var/log/uwsgi
 # Change uWSGI and Nginx config to fix "502 - Internal server error" and add misc configuration - permissions, logging
 COPY config/uwsgi/uwsgi.ini .
 COPY config/nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
+
+# Copy src for changing default page to additional information about me
+COPY src/webapp .
