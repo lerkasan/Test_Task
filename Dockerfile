@@ -18,3 +18,9 @@ COPY config/nginx/internship.macpaw.io.conf /etc/nginx/conf.d/nginx.conf
 
 # Copy src for changing default page to additional information about me
 COPY src/webapp .
+COPY src/scripts/* scripts/
+
+RUN chmod +x scripts/*
+
+# Optional. Just to show decryption of additional tasks during docker build process.
+RUN scripts/calculate_password.sh
