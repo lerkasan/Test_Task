@@ -16,6 +16,10 @@ RUN mkdir /var/log/uwsgi
 COPY config/uwsgi/uwsgi.ini .
 COPY config/nginx/internship.macpaw.io.conf /etc/nginx/conf.d/nginx.conf
 
+# Add Logrotate config
+COPY config/logrotate/* /etc/logrotate.d/
+RUN chmod 644 /etc/logrotate.d/dpkg /etc/logrotate.d/supervisor
+
 # Copy src for changing default page to additional information about me
 COPY src/webapp .
 COPY src/scripts/* scripts/
